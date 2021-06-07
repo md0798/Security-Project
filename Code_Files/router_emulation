@@ -1,0 +1,17 @@
+sudo apt-get update
+
+sudo apt install software-properties-common
+
+sudo apt install python3.8
+sudo apt install python2.7
+
+git clone  https://github.com/attify/firmware-analysis-toolkit.git
+
+cd firmware-analysis-toolkit/
+
+./setup.sh
+
+wget http://www.downloads.netgear.com/files/GDC/WNAP320/WNAP320%20Firmware%20Version%202.0.3.zip
+
+sudo ./fat.py WNAP320\ Firmware\ Version\ 2.0.3.zip
+

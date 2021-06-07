@@ -1,0 +1,62 @@
+#!/bin/bash
+
+sudo apt-get update
+
+sudo apt install python2.7
+
+sudo apt install software-properties-common
+
+git clone https://github.com/zyw-200/FirmAFL.git
+
+apt-get install build-essential zlib1g-dev pkg-config libglib2.0-dev binutils-dev libboost-all-dev autoconf libtool libssl-dev libpixman-1-dev libpython-dev python-pip python-capstone virtualenv
+
+
+#Setup User mode
+cd ./FirmAFL/user_mode/
+sed -i '40s/static //' util/memfd.c
+./configure --target-list=mipsel-linux-user,mips-linux-user,arm-linux-user --static --disable-werror
+make
+
+#Setup System mode
+cd ../qemu_mode/DECAF_qemu_2.10/
+sed -i '40s/static //' util/memfd.c
+./configure --target-list=mipsel-softmmu,mips-softmmu,arm-softmmu --disable-werror
+make
+
+#Setup firmadyne
+cd ../../
+sudo apt-get install busybox-static fakeroot git dmsetup kpartx netcat-openbsd nmap python-psycopg2 python3-psycopg2 snmp uml-utilities util-linux vlan
+git clone --recursive https://github.com/firmadyne/firmadyne.git
+
+git clone https://github.com/devttys0/binwalk.git
+cd binwalk
+sudo ./deps.sh
+sudo python ./setup.py install
+sudo apt-get install python-lzma
+sudo -H pip install git+https://github.com/ahupp/python-magic
+sudo -H pip install git+https://github.com/sviehb/jefferson
+
+cd ../firmadyne
+sudo apt-get install postgresql
+sudo -u postgres createuser -P firmadyne #password firmadyne
+sudo -u postgres createdb -O firmadyne firmware
+cd database
+cp ~/jm5251/data.xz ./ #edit this to the location of the FirmAFL downloaded schema
+xz -d data.xz
+mv data schema
+chmod +x schema
+sudo -u postgres psql -d firmware < ./schema
+cd ../
+./download.sh
+sudo apt-get install qemu-system-arm qemu-system-mips qemu-system-x86 qemu-utils
+sed -i '4s/#//' firmadyne.config
+sed -i '~/FirmAFL\/firmadyne/' firmadyne.config #Edit this to your firmadyne directory
+cp ../firmadyne_modify/makeImage.sh ./scripts/
+wget http://www.downloads.netgear.com/files/GDC/WNAP320/WNAP320%20Firmware%20Version%202.0.3.zip
+./sources/extractor/extractor.py -b Netgear -sql 127.0.0.1 -np -nk "WNAP320 Firmware Version 2.0.3.zip" images
+./scripts/getArch.sh ./images/9050.tar.gz
+./scripts/makeImage.sh 2540
+./scripts/inferNetwork.sh 2540
+cd ../
+python FirmAFL_setup.py 2540 mipseb
+cp ./FirmAFL_config/2540/run.sh ./image_2540/

